@@ -41,6 +41,10 @@
       grid-area: close-btn;
       height: 1rem;
       cursor: pointer;
+
+      &:hover {
+        fill: var(--close-rules-container-btn);
+      }
     }
 
     .rules-icons {
@@ -64,6 +68,10 @@
   color: hsl(var(--white));
   font-family: inherit;
   cursor: pointer;
+  
+  &:hover {
+    color: var(--play-again-hover-button);
+  }
 }
 
 @media screen and (max-width: $movile_media_query) {
@@ -92,5 +100,14 @@
         justify-self: center;
       }
     }  
+  }
+
+  .rules-button {
+    position: absolute;
+    inset: auto 0 3rem 0;
+    margin: auto;
+  
+    height: 2.5rem;
+    width: 8rem;
   }
 }

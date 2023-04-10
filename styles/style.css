@@ -23,6 +23,7 @@
     top, hsl(214, 47%, 23%), hsl(237, 49%, 15%)
   );
   --play-again-hover-button: hsl(349, 70%, 56%);
+  --close-rules-container-btn: hsl(349, 75%, 40%);
   /* ____ Fonts _____ */
   --font-familly: "Barlow Semi Condensed", sans-serif;
   --font-size-600: 600;
@@ -206,13 +207,6 @@
   .single-option {
     width: 5.5rem !important;
   }
-  .rules-button {
-    position: absolute;
-    inset: auto 0 3rem 0;
-    margin: auto;
-    height: 2.5rem;
-    width: 8rem;
-  }
 }
 .rules-main-container {
   position: absolute;
@@ -246,6 +240,9 @@
   height: 1rem;
   cursor: pointer;
 }
+.rules-main-container .rules-container .close-rules-container-button:hover {
+  fill: var(--close-rules-container-btn);
+}
 .rules-main-container .rules-container .rules-icons {
   width: 100%;
   grid-area: rules;
@@ -264,6 +261,9 @@
   font-family: inherit;
   cursor: pointer;
 }
+.rules-button:hover {
+  color: var(--play-again-hover-button);
+}
 
 @media screen and (max-width: 450px) {
   .rules-main-container .rules-container {
@@ -280,6 +280,13 @@
   .rules-main-container .rules-container .close-rules-container-button {
     height: 1.3rem;
     justify-self: center;
+  }
+  .rules-button {
+    position: absolute;
+    inset: auto 0 3rem 0;
+    margin: auto;
+    height: 2.5rem;
+    width: 8rem;
   }
 }
 .play-game-container {
