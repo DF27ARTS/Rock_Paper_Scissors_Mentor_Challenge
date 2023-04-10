@@ -18,6 +18,14 @@
   height: 100%;
 }
 
+.single-option[area-click=click-button].button-clicked {
+  animation: button-click 250ms ease;
+
+  @keyframes button-click {
+    0%, 100% { transform: scale(1)}
+    50% { transform: scale(.8)}
+  }
+}
 
 .single-option {
   position: absolute;

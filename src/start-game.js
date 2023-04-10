@@ -4,7 +4,10 @@ import { newGame } from "./play-again.js";
 
 /* __________ Tags __________ */
 const BonusGameOptions = document.querySelector(".game-options-contaner");
-const BonusGameButtons = document.querySelectorAll(".single-option-img");
+const BonusGameButtons = document.querySelectorAll(
+  '[area-button="single-button-option"]'
+);
+const OptionButtons = document.querySelectorAll('[area-click="click-button"]');
 
 const playAgainButton = document.querySelector(".container-winner-play-again");
 
@@ -137,10 +140,21 @@ const startNewGame = (URL) => {
   setUserOption();
 };
 
+const setClickAnimation = (index) => {
+  OptionButtons[index].classList.add("button-clicked");
+
+  setTimeout(() => {
+    OptionButtons[index].classList.remove("button-clicked");
+  }, 250);
+};
+
 /* __________ Listeners __________ */
-BonusGameButtons.forEach((button) => {
+BonusGameButtons.forEach((button, inndex) => {
   button.addEventListener("click", ({ target: { currentSrc } }) => {
-    startNewGame(currentSrc);
+    setClickAnimation(inndex);
+    setTimeout(() => {
+      startNewGame(currentSrc);
+    }, 400);
   });
 });
 

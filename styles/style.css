@@ -103,6 +103,18 @@
   height: 100%;
 }
 
+.single-option[area-click=click-button].button-clicked {
+  animation: button-click 250ms ease;
+}
+@keyframes button-click {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}
+
 .single-option {
   position: absolute;
   margin: auto;
@@ -335,6 +347,7 @@
   aspect-ratio: 3/3.1;
   border-radius: 50%;
   border: none;
+  cursor: default;
 }
 .play-game-container .container-winner {
   display: flex;
@@ -450,6 +463,13 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--font-family);
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 .game-container {
