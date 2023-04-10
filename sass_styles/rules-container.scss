@@ -43,7 +43,7 @@
       cursor: pointer;
 
       &:hover {
-        fill: var(--close-rules-container-btn);
+        color: var(--close-rules-container-btn);
       }
     }
 
@@ -89,6 +89,7 @@
       row-gap: 5rem;
       padding: 5rem 2rem;
       height: 100vh;
+      justify-items: center;
   
 
       .rules-title {
@@ -97,7 +98,7 @@
       
       .close-rules-container-button {
         height: 1.3rem;
-        justify-self: center;
+        width: 1.3rem;
       }
     }  
   }
