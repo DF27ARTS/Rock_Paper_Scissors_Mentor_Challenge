@@ -1,0 +1,96 @@
+
+@use "variables" as *;
+
+.rules-main-container {
+  position: absolute;
+  inset: 0;
+  background: #0007;
+
+  display: grid;
+  place-content: center;
+  z-index: 100;
+
+  transform: scale(0);
+  transition: transform 250ms ease-in-out;
+
+
+  .rules-container {
+    background: hsl(var(--white));
+    border-radius: 1rem;
+
+    display: grid;
+    grid-template-columns: 16rem 1rem;
+    grid-template-rows: 1.5rem auto;
+    grid-template-areas: 
+      "title close-btn"
+      "rules rules"
+    ;
+    row-gap: 1rem;
+    padding: 2rem 1.5rem;
+
+
+    .rules-title {
+      grid-area: title;
+      flex-grow: 1;
+      font-size: 1.5rem;
+      color: hsl(var(--dark-text));
+      font-weight: var(--font-size-700);
+    }
+
+    .close-rules-container-button {
+      grid-area: close-btn;
+      height: 1rem;
+      cursor: pointer;
+    }
+
+    .rules-icons {
+      width: 100%;
+      grid-area: rules;
+    }
+  }
+} 
+
+
+.rules-button {
+  position: absolute;
+  inset: auto 1.5rem 1.5rem auto;
+
+  height: 2rem;
+  width: 6rem;
+  border-radius: .4rem;
+  border: 1px solid hsl(var(--white));
+  outline: none;
+  background: transparent;
+  color: hsl(var(--white));
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media screen and (max-width: $movile_media_query) {
+  .rules-main-container {
+
+    .rules-container {
+      border-radius: 0;
+  
+      grid-template-columns: auto;
+      grid-template-areas: 
+        "title"
+        "rules"
+        "close-btn"
+      ;
+      row-gap: 5rem;
+      padding: 5rem 2rem;
+      height: 100vh;
+  
+
+      .rules-title {
+        text-align: center;
+      }
+      
+      .close-rules-container-button {
+        height: 1.3rem;
+        justify-self: center;
+      }
+    }  
+  }
+}

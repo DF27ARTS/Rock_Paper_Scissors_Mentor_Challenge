@@ -1,0 +1,229 @@
+
+@use "variables" as *;
+
+.play-game-container {
+  display: none;
+  grid-template-areas: 
+    "player-one button player-two"
+  ;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  align-items: center;
+  transform: scale(0);
+  transition: transform 100ms ease-out;
+
+  & > * {
+    padding: 0 1.5rem;
+  }
+
+  .single-player-container {
+    display: grid;
+    grid-template-areas:
+      "player-title"
+      "player-button"
+    ;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    gap: 3rem;
+    justify-content: center;
+
+    &:nth-child(1) {
+      grid-area: player-one;
+    }
+
+    &:nth-child(2) {
+      grid-area: player-two;
+    }
+  }
+
+  .single-player-title {
+    color: hsl(var(--white));
+    font-weight: var(--font-size-600);
+    grid-area: player-title;
+    text-align: center;
+  }
+
+  .container-button-house-choise {
+    grid-area: player-button;
+    width: 11rem;
+    height: 11rem;
+    background: #0002;
+    border-radius: 50%;
+
+    display: grid;
+    place-content: center;
+    margin: 1.5rem;
+
+    animation: beating 1.5s ease-in-out;
+    animation-iteration-count: 2;
+
+    @keyframes beating {
+      0%, 30%, 70%, 100%  {
+        transform: scale(1);
+      }
+      15%, 50%{
+        transform: scale(1.2);
+      }
+    }
+
+    .single-player-icon {
+      transition: transform 150ms ease-out;
+      transform: scale(0);
+    }
+  }
+  
+  .single-player-icon {
+    grid-area: player-button;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+
+    width: 14rem;
+    aspect-ratio: 3 / 3.1;
+    border-radius: 50%;
+    border: none;
+
+  }
+
+  .container-winner {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    grid-area: button;
+    align-items: center;
+
+    transform: scale(0);
+    transition: transform 150ms ease-out;
+
+    z-index: 10;
+    width: 0;
+    overflow: hidden;
+
+    transition: width 200ms ease;
+    
+    &.open {
+      width: 15rem;
+      transform: scale(1);
+    }
+
+    .container-winner-title {
+      font-size: 2.5rem;
+      color: hsl(var(--white));
+      font-weight: var(--font-size-700);
+      width: max-content;
+    }
+
+    .container-winner-play-again {
+      height: 2.5rem;
+      border-radius: .5rem;
+      border: none;
+      outline: none;
+      background: hsl(var(--white));
+      color: hsl(var(--dark-text));
+      font-weight: var(--font-size-600);
+      width: 100%;
+
+      cursor: pointer;
+
+      &:hover {
+        color: var(--play-again-hover-button);
+      }
+    }
+  }
+
+  .single-player-icon-active {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      inset: -12rem;
+      z-index: -1;
+
+      border-radius: 50%;
+      background: radial-gradient(
+        circle at center,
+        transparent, 
+        hsl(var(--white), .04) 10% 10%, 
+        transparent 7% 7%, 
+        hsl(var(--white), .04) 39% 39%, 
+        transparent 20% 20%, 
+        hsl(var(--white), .04) 54.5% 54.5%,
+        transparent 30% 30%, 
+        hsl(var(--white), .05)
+      );
+
+      animation: winner_player 350ms ease-out forwards;
+
+      @keyframes winner_player {
+        00% { transform: scale(0) }
+        100% { transform: scale(1) }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $movile_media_query) {
+  .play-game-container {
+    grid-template-areas: 
+      "player-one player-two"
+      "button button"
+    ;
+    grid-template-columns: repeat(2, 50%) !important;
+    grid-template-rows: 12rem auto!important;
+    grid-row-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+
+    .single-player-container {
+
+      grid-template-areas:
+        "player-button"
+        "player-title"
+      ;
+      flex-direction: column;
+      gap: 1rem;
+      height: 100%;
+
+      align-items: flex-end;
+    }
+
+    .single-player-title {
+      font-size: .8rem;
+      height: fit-content;
+    }
+
+    .container-button-house-choise {
+      width: 7.5rem;
+      height: 7.5rem;
+      margin: 0 1.5rem;
+    }
+
+    .single-player-icon {
+      width: 8.5rem;
+    }
+
+    .container-winner {
+      align-items: center;
+      grid-area: button;
+      width: 100%;
+
+      &.open {
+        width: 100%;
+      }
+    }  
+
+    .container-winner-play-again {
+      height: 2.8rem !important;
+      width: 12rem !important;
+    }
+  }
+
+  .single-player-icon-active {
+
+    &::before {
+      inset: -5rem !important;
+    }
+  }
+}

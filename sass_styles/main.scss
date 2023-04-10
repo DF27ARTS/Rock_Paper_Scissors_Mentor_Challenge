@@ -1,0 +1,46 @@
+
+@use "variables" as *;
+@use "score-container";
+@use "game-options-container";
+@use "rules-container";
+@use "single-game-container";
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(
+    circle at top center, hsl(214, 47%, 23%), hsl(237, 49%, 15%)
+  );
+
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+.game-container {
+
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  gap: 5.5rem;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  padding: 3rem 0;
+}
+
+@media screen and (max-width: $movile_media_query) {
+  .game-container {
+    padding: 1.7rem;
+  }
+
+}

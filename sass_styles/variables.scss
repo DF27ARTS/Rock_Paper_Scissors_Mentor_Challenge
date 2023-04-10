@@ -1,0 +1,54 @@
+
+// @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
+:root {
+
+  /* ____ Colors _____ */
+
+
+  // Primary
+  
+  --scissors-gradient: radial-gradient(
+    circle at 50% 47%, hsl(40, 84%, 53%) 68% 68%, hsl(39, 92%, 40%) 10% 10% 
+  );
+  --paper-gradient: radial-gradient(
+    circle at 50% 47%, hsl(230, 89%, 65%) 68% 68%, hsl(230, 92%, 58%) 10% 10%
+  );
+  --rock-gradient: radial-gradient(
+    circle at 50% 47%, hsl(349, 70%, 56%) 68% 68%, hsl(349, 75%, 40%) 10% 10% 
+  );
+  --lizard-gradient: radial-gradient(
+    circle at 50% 47%, hsl(261, 72%, 63%) 68% 68%, hsl(261, 85%, 45%) 10% 10% 
+  );
+  --cyan-gradient: radial-gradient(
+    circle at 50% 47%, hsl(189, 58%, 57%) 68% 68%, hsl(189, 62%, 40%) 10% 10% 
+  );
+
+  // Neutral
+  --dark-text: 229, 25%, 31%;
+  --score-text: 229, 64%, 46%;
+  --header-outline: 217, 16%, 45%;
+  --white: 0, 0%, 100%;
+
+  // Background
+  --radial-gradient: radial-gradient(
+    top, hsl(214, 47%, 23%), hsl(237, 49%, 15%)
+  );
+  --play-again-hover-button: hsl(349, 70%, 56%);
+
+
+  /* ____ Fonts _____ */
+
+  // Familly
+
+
+  --font-familly: 'Barlow Semi Condensed', sans-serif;
+
+
+  // Weight
+  --font-size-600: 600;
+  --font-size-700: 700;
+
+}
+
+$movile_media_query: 450px;

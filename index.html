@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script type="module" src="src/main.js" defer></script>
+
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <main class="game-container">
+      <div class="score-title-container">
+        <img
+          src="./images/logo-bonus.svg"
+          alt="score titles icon"
+          class="game-title"
+        />
+        <div class="score-container">
+          <h1 class="score-title">SCORE</h1>
+          <div class="score-amount">0</div>
+        </div>
+      </div>
+
+      <!-- _____ Bonus Game options _____ -->
+
+      <div class="game-options-contaner">
+        <img
+          src="./images/bg-pentagon.svg"
+          alt="background options image"
+          class="backgrouns-options-img"
+        />
+        <div class="img-game-options">
+          <button area-button="scissors" class="single-option">
+            <div class="img-icon-contaner">
+              <img
+                src="./images/icon-scissors.svg"
+                alt="game option icon"
+                class="single-option-img"
+              />
+            </div>
+          </button>
+          <button area-button="paper" class="single-option">
+            <div class="img-icon-contaner">
+              <img
+                src="./images/icon-paper.svg"
+                alt="game option icon"
+                class="single-option-img"
+              />
+            </div>
+          </button>
+          <button area-button="rock" class="single-option">
+            <div class="img-icon-contaner">
+              <img
+                src="./images/icon-rock.svg"
+                alt="game option icon"
+                class="single-option-img"
+              />
+            </div>
+          </button>
+          <button area-button="lizard" class="single-option">
+            <div class="img-icon-contaner">
+              <img
+                src="./images/icon-lizard.svg"
+                alt="game option icon"
+                class="single-option-img"
+              />
+            </div>
+          </button>
+          <button area-button="spock" class="single-option">
+            <div class="img-icon-contaner">
+              <img
+                src="./images/icon-spock.svg"
+                alt="game option icon"
+                class="single-option-img"
+              />
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- _____ Single Game Container _____ -->
+      <div class="play-game-container">
+        <div class="single-player-container">
+          <div class="single-player-title">YOU PICKED</div>
+          <button area-single-player="player" class="single-player-icon">
+            <div class="img-icon-contaner">
+              <img
+                area-player-icon="icon image"
+                src="./images/icon-scissors.svg"
+                alt="single player icon"
+                class="single-option-img"
+              />
+            </div>
+          </button>
+        </div>
+
+        <div class="container-winner">
+          <div class="container-winner-title">YOU LOSE</div>
+          <button class="container-winner-play-again">PLAY AGAIN</button>
+        </div>
+
+        <div class="single-player-container">
+          <div class="single-player-title">THE HOUSE PICKED</div>
+          <div class="container-button-house-choise">
+            <button area-single-player="computer" class="single-player-icon">
+              <div class="img-icon-contaner">
+                <img
+                  area-player-icon="icon image"
+                  src="./images/icon-spock.svg"
+                  alt="single player icon"
+                  class="single-option-img"
+                />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- _____ Bonus rules container _____ -->
+    <div class="rules-main-container">
+      <div class="rules-container">
+        <div class="rules-title">RULES</div>
+        <img
+          src="./images/icon-close.svg"
+          alt="close rules container icon"
+          class="close-rules-container-button"
+        />
+        <img
+          src="./images/image-rules-bonus.svg"
+          alt="rules icons"
+          class="rules-icons"
+        />
+      </div>
+    </div>
+
+    <!-- _____ Open rules button _____ -->
+    <button class="rules-button">RULES</button>
+  </body>
+</html>
